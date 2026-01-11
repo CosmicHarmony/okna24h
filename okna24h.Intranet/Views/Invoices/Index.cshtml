@@ -1,0 +1,101 @@
+﻿@model IEnumerable<okna24h.Data.Data.Orders.Invoice>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfIssue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NetTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EditDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeleteDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfIssue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaxTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EditDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeleteDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.ApplicationUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.ApplicationUserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.InvoiceId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.InvoiceId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.InvoiceId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

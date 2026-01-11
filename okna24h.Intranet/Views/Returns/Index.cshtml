@@ -1,0 +1,101 @@
+﻿@model IEnumerable<okna24h.Data.Data.Orders.Return>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsProcessed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProcessedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EditDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeleteDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsProcessed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EditDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeleteDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.ApplicationUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.ApplicationUserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReturnId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReturnId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReturnId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

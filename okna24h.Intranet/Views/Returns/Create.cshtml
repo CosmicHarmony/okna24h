@@ -1,0 +1,86 @@
+﻿@model okna24h.Data.Data.Orders.Return
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Return</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ReturnCode" class="control-label"></label>
+                <input asp-for="ReturnCode" class="form-control" />
+                <span asp-validation-for="ReturnCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReturnDate" class="control-label"></label>
+                <input asp-for="ReturnDate" class="form-control" />
+                <span asp-validation-for="ReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reason" class="control-label"></label>
+                <input asp-for="Reason" class="form-control" />
+                <span asp-validation-for="Reason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsProcessed" /> @Html.DisplayNameFor(model => model.IsProcessed)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcessedDate" class="control-label"></label>
+                <input asp-for="ProcessedDate" class="form-control" />
+                <span asp-validation-for="ProcessedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDateTime" class="control-label"></label>
+                <input asp-for="CreationDateTime" class="form-control" />
+                <span asp-validation-for="CreationDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EditDateTime" class="control-label"></label>
+                <input asp-for="EditDateTime" class="form-control" />
+                <span asp-validation-for="EditDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeleteDateTime" class="control-label"></label>
+                <input asp-for="DeleteDateTime" class="form-control" />
+                <span asp-validation-for="DeleteDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label"></label>
+                <select asp-for="EmployeeId" class ="form-control" asp-items="ViewBag.EmployeeId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<okna24h.Data.Data.Orders.Shipment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipmentCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carrier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrackingNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EditDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeleteDateTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipmentCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carrier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrackingNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EditDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeleteDateTime)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ShipmentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ShipmentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ShipmentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

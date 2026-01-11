@@ -1,0 +1,119 @@
+﻿@model okna24h.Data.Data.Shop.Article
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Article</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ArticleId" />
+            <div class="form-group">
+                <label asp-for="Code" class="control-label"></label>
+                <input asp-for="Code" class="form-control" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoURL" class="control-label"></label>
+                <input asp-for="FotoURL" class="form-control" />
+                <span asp-validation-for="FotoURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDateTime" class="control-label"></label>
+                <input asp-for="CreationDateTime" class="form-control" />
+                <span asp-validation-for="CreationDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EditDateTime" class="control-label"></label>
+                <input asp-for="EditDateTime" class="form-control" />
+                <span asp-validation-for="EditDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeleteDateTime" class="control-label"></label>
+                <input asp-for="DeleteDateTime" class="form-control" />
+                <span asp-validation-for="DeleteDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaterialTypeColorId" class="control-label"></label>
+                <select asp-for="MaterialTypeColorId" class="form-control" asp-items="ViewBag.MaterialTypeColorId"></select>
+                <span asp-validation-for="MaterialTypeColorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GlassId" class="control-label"></label>
+                <select asp-for="GlassId" class="form-control" asp-items="ViewBag.GlassId"></select>
+                <span asp-validation-for="GlassId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SortId" class="control-label"></label>
+                <select asp-for="SortId" class="form-control" asp-items="ViewBag.SortId"></select>
+                <span asp-validation-for="SortId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpenningSystemId" class="control-label"></label>
+                <select asp-for="OpenningSystemId" class="form-control" asp-items="ViewBag.OpenningSystemId"></select>
+                <span asp-validation-for="OpenningSystemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfileId" class="control-label"></label>
+                <select asp-for="ProfileId" class="form-control" asp-items="ViewBag.ProfileId"></select>
+                <span asp-validation-for="ProfileId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RollerId" class="control-label"></label>
+                <select asp-for="RollerId" class="form-control" asp-items="ViewBag.RollerId"></select>
+                <span asp-validation-for="RollerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SashId" class="control-label"></label>
+                <select asp-for="SashId" class="form-control" asp-items="ViewBag.SashId"></select>
+                <span asp-validation-for="SashId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShutterId" class="control-label"></label>
+                <select asp-for="ShutterId" class="form-control" asp-items="ViewBag.ShutterId"></select>
+                <span asp-validation-for="ShutterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SizeId" class="control-label"></label>
+                <select asp-for="SizeId" class="form-control" asp-items="ViewBag.SizeId"></select>
+                <span asp-validation-for="SizeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
