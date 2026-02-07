@@ -25,12 +25,13 @@ namespace okna24h.Data.Data.Shop
         public decimal Price { get; set; }
 
         public required string FotoURL { get; set; }
+        public bool BestOffer { get; set; }
 
         public string Description { get; set; } = string.Empty;
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
 
         [Column(TypeName = "datetime")]
-        public DateTime CreationDateTime { get; set; }
+        public DateTime CreationDateTime { get; set; } = DateTime.Now;
 
         [Column(TypeName = "datetime")]
         public DateTime? EditDateTime { get; set; }

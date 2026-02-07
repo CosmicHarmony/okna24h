@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\okna24h.Data\okna24h.Data.csproj" />
+  </ItemGroup>
+
 </Project>
